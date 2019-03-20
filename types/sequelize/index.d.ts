@@ -3410,7 +3410,7 @@ declare namespace sequelize {
         useMaster?: boolean;
     }
 
-    type AnyFindOptions = FindOptions<any>;
+    type AnyFindOptions<TAttributes = any> = FindOptions<TAttributes>;
 
     /**
      * Options for Model.count method
@@ -3487,7 +3487,7 @@ declare namespace sequelize {
     /**
      * Options for Model.findOrInitialize method
      */
-    interface FindOrInitializeOptions<TAttributes> extends AnyFindOptions {
+    interface FindOrInitializeOptions<TAttributes> extends AnyFindOptions<TAttributes> {
 
         /**
          * Default values to use if building a new instance
